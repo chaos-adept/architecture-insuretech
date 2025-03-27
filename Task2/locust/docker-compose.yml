@@ -1,0 +1,10 @@
+version: '3'
+
+services:
+  locust:
+    image: locustio/locust
+    ports:
+      - "8089:8089"
+    volumes:
+      - ./:/mnt/locust
+    command: -f /mnt/locust/locustfile.py --host=http://192.168.49.2:30080/
